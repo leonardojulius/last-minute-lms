@@ -26,7 +26,7 @@ This project was inspired by the **[Greatestack YouTube Channel](https://www.you
 
 ## 🛠️ Tech Stack
 
-- HTML5
+- HTML
 - CSS
 - VITE + REACT
 - Hosted via GitHub Pages / static web hosting
