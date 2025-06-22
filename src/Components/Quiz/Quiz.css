@@ -1,14 +1,14 @@
 .container {
-    width: 640px;
+    width: 440px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 50px;
     background: white;
     color: #262626;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     border-radius: 10px;
-    padding: 40px 50px;
+    padding: 30px 50px;
 }
 
 .container hr {
@@ -18,7 +18,7 @@
 }
 
 .container h2{
-    font-size: 27px;
+    font-size: 17px;
     font-weight: 500;
 }
 
@@ -51,7 +51,7 @@
 
 .container .index {
     margin:auto;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .container .correct {
