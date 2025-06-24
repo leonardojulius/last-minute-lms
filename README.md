@@ -4,11 +4,11 @@
 
 ## 🚀 Features
 
-- No database, no login – 100% static and fast.
-- Simple layout for easy reading and navigation.
-- Short quizzes for quick self-assessment.
-- Dictionary-style definitions and key terms.
-- Mobile-friendly design.
+- ⚡ No database, no login – 100% static and fast.  
+- 📁 Upload your own quiz data in `.json` or `.txt` format.  
+- 🧩 Simple layout for easy reading and navigation.  
+- ✅ Short quizzes for quick self-assessment.  
+- 📖 Dictionary-style definitions and key terms.
 
 ## 🎯 Use Case
 
@@ -34,8 +34,4 @@ This project was inspired by the **[Greatestack YouTube Channel](https://www.you
 ## 📄 License
 
 This project is for educational and personal use. Content is curated for fast learning and self-review.
-
----
-
-> “Don’t cram. Prepare smart — even at the last minute.” – *Last Minute LMS*
 

@@ -3,7 +3,7 @@ import './Quiz.css';
 
 const shuffleArray = (array) => {
   return array
-    .map((item) => ({ item, sort: Math.random() })) 
+    .map((item) => ({ item, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ item }) => item);
 };
@@ -63,7 +63,7 @@ const Quiz = () => {
     reader.onload = (event) => {
       try {
         const content = event.target.result;
-        const parsed = eval(content); // Safer: JSON.parse if valid
+        const parsed = eval(content); // Use JSON.parse if format is JSON only
         if (Array.isArray(parsed)) {
           localStorage.setItem("quizData", JSON.stringify(parsed));
           const shuffled = shuffleArray(parsed);
@@ -141,15 +141,8 @@ const Quiz = () => {
     setEraseStorage(false);
   };
 
-  if (!loaded) {
-    return (
-      <div className="container">
-        <h1>Upload Quiz File (.txt)</h1>
-        <input type="file" accept=".txt" onChange={handleUpload} />
-
-        <h4>Sample Format:</h4>
-        <pre style={{ backgroundColor: '#f8f8f8', padding: '10px', fontSize: '13px', whiteSpace: 'pre-wrap' }}>
-          {`[
+  // 📋 Clipboard sample
+  const sampleJson = `[
   {
     "question": "Which device is required for the Internet connection?",
     "option1": "Modem",
@@ -166,8 +159,33 @@ const Quiz = () => {
     "option4": "Africa",
     "ans": 4
   }
-]`}
+]`;
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(sampleJson)
+      .then(() => alert("Sample format copied to clipboard!"))
+      .catch((err) => alert("Failed to copy: " + err));
+  };
+
+  if (!loaded) {
+    return (
+      <div className="container">
+        <h1>Upload Quiz File (.txt or .json)</h1>
+        <input type="file" accept=".txt,.json" onChange={handleUpload} />
+
+        <button onClick={copyToClipboard} style={{ marginTop: '5px' }}>
+          📋 Copy Sample
+        </button>
+
+        <pre style={{
+          backgroundColor: '#f8f8f8',
+          padding: '10px',
+          fontSize: '13px',
+          whiteSpace: 'pre-wrap'
+        }}>
+          {sampleJson}
         </pre>
+
       </div>
     );
   }
@@ -184,7 +202,6 @@ const Quiz = () => {
         }}>
           🔄
         </button>
-
       </div>
 
       <hr />
@@ -204,7 +221,6 @@ const Quiz = () => {
       ) : (
         <>
           <h2>You Scored {score} out of {shuffledData.length}</h2>
-       
           <button onClick={reset}>Restart</button>
         </>
       )}
