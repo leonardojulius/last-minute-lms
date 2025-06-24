@@ -3,7 +3,7 @@ import './Quiz.css';
 
 const shuffleArray = (array) => {
   return array
-    .map((item) => ({ item, sort: Math.random() }))
+    .map((item) => ({ item, sort: Math.random() })) 
     .sort((a, b) => a.sort - b.sort)
     .map(({ item }) => item);
 };
@@ -176,10 +176,15 @@ const Quiz = () => {
     <div className="container">
       <div className="header-row">
         <h1>Last Minute LMS</h1>
-        <button className="force-reset" onClick={forceReset}>
-          🔄 
+        <button className="force-reset" onClick={() => {
+          const confirmReset = window.confirm("Are you sure you want to erase all quiz data?");
+          if (confirmReset) {
+            forceReset();
+          }
+        }}>
+          🔄
         </button>
-  
+
       </div>
 
       <hr />
@@ -199,14 +204,7 @@ const Quiz = () => {
       ) : (
         <>
           <h2>You Scored {score} out of {shuffledData.length}</h2>
-          <label style={{ display: 'block', margin: '10px 0' }}>
-            <input
-              type="checkbox"
-              checked={eraseStorage}
-              onChange={(e) => setEraseStorage(e.target.checked)}
-            />
-            &nbsp;Erase uploaded file from localStorage
-          </label>
+       
           <button onClick={reset}>Restart</button>
         </>
       )}
