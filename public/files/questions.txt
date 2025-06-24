@@ -1,0 +1,21 @@
+[
+
+  {
+    "question": "What is the capital city of the Philippines?",
+    "option1": "Manila",
+    "option2": "Quezon City",
+    "option3": "Cebu",
+    "option4": "Davao",
+    "ans": 1
+  },
+
+  {
+    "question": "What is the national language of the Philippines?",
+    "option1": "English",
+    "option2": "Filipino",
+    "option3": "Cebuano",
+    "option4": "Ilocano",
+    "ans": 2
+  },
+
+]

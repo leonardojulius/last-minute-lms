@@ -141,31 +141,42 @@ const Quiz = () => {
     setEraseStorage(false);
   };
 
+
+
+
+
+
   // 📋 Clipboard sample
   const sampleJson = `[
+
   {
-    "question": "Which device is required for the Internet connection?",
-    "option1": "Modem",
-    "option2": "Router",
-    "option3": "LAN Cable",
-    "option4": "Pen Drive",
+    "question": "What is the capital city of the Philippines?",
+    "option1": "Manila",
+    "option2": "Quezon City",
+    "option3": "Cebu",
+    "option4": "Davao",
     "ans": 1
   },
+
   {
-    "question": "Which continent has the highest number of countries?",
-    "option1": "Asia",
-    "option2": "Europe",
-    "option3": "North America",
-    "option4": "Africa",
-    "ans": 4
-  }
+    "question": "What is the national language of the Philippines?",
+    "option1": "English",
+    "option2": "Filipino",
+    "option3": "Cebuano",
+    "option4": "Ilocano",
+    "ans": 2
+  },
+
 ]`;
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(sampleJson)
-      .then(() => alert("Sample format copied to clipboard!"))
-      .catch((err) => alert("Failed to copy: " + err));
-  };
+
+const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/last-minute-lms/files/questions.txt'; // Include base path
+  link.download = 'questions.txt';
+  link.click();
+};
+
 
   if (!loaded) {
     return (
@@ -173,8 +184,8 @@ const Quiz = () => {
         <h1>Upload Quiz File (.txt or .json)</h1>
         <input type="file" accept=".txt,.json" onChange={handleUpload} />
 
-        <button onClick={copyToClipboard} style={{ marginTop: '5px' }}>
-          📋 Copy Sample
+        <button onClick={handleDownload} style={{ marginTop: '5px' }}>
+          Download Sample
         </button>
 
         <pre style={{
