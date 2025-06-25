@@ -146,36 +146,14 @@ const Quiz = () => {
 
 
 
-  // 📋 Clipboard sample
-  const sampleJson = `[
-
-  {
-    "question": "What is the capital city of the Philippines?",
-    "option1": "Manila",
-    "option2": "Quezon City",
-    "option3": "Cebu",
-    "option4": "Davao",
-    "ans": 1
-  },
-
-  {
-    "question": "What is the national language of the Philippines?",
-    "option1": "English",
-    "option2": "Filipino",
-    "option3": "Cebuano",
-    "option4": "Ilocano",
-    "ans": 2
-  },
-
-]`;
 
 
-const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/last-minute-lms/files/questions.txt'; // Include base path
-  link.download = 'questions.txt';
-  link.click();
-};
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/last-minute-lms/files/questions.txt'; // Include base path
+    link.download = 'questions.txt';
+    link.click();
+  };
 
 
   if (!loaded) {
@@ -188,14 +166,17 @@ const handleDownload = () => {
           Download Sample
         </button>
 
-        <pre style={{
-          backgroundColor: '#f8f8f8',
-          padding: '10px',
-          fontSize: '13px',
-          whiteSpace: 'pre-wrap'
-        }}>
-          {sampleJson}
-        </pre>
+        <img
+          src="/last-minute-lms/files/demo.gif"
+          alt="Quiz preview"
+          style={{
+            width: '100%',
+            maxWidth: '600px',
+            borderRadius: '8px',
+            display: 'block',
+            margin: '20px auto'
+          }}
+        />
 
       </div>
     );

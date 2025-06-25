@@ -4,9 +4,12 @@
 
 **[Live Project](https://leonardojulius.github.io/last-minute-lms/)**
 
-## 🚀 Features
 
+![Demo](last-minute-lms/files/demo.gif)
+
+## 🚀 Features
 - ⚡ No database, no login – 100% static and fast.  
+- 🔀 Randomized questions and answer choices for a unique experience every time.
 - 📁 Upload your own quiz data in `.json` or `.txt` format.  
 - 🧩 Simple layout for easy reading and navigation.  
 - ✅ Short quizzes for quick self-assessment.  
