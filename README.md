@@ -5,7 +5,7 @@
 **[Live Project](https://leonardojulius.github.io/last-minute-lms/)**
 
 
-![Demo](last-minute-lms/files/demo.gif)
+![Demo](last-minute-lms/files/demo.gif](https://github.com/leonardojulius/last-minute-lms/blob/main/public/files/demo.gif)
 
 ## 🚀 Features
 - ⚡ No database, no login – 100% static and fast.  
